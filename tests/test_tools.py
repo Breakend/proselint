@@ -32,4 +32,4 @@ This is also a no-good sentence.
 
     def test_on_no_newlines(self):
         """Test that lint works on text without a terminal newline."""
-        assert len(lint(self.text_with_no_newline)) == 1
+        assert len(lint(self.text_with_no_newline)) == 2
