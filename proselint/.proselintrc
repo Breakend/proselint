@@ -14,6 +14,7 @@
         "cursing.nword"                 : true,
         "dates_times.am_pm"             : true,
         "dates_times.dates"             : true,
+        "dreyers.common_misspelling"    : true,
         "dreyers.wan_intensifiers_and_throat_clearers" : true,
         "hedging.misc"                  : true,
         "hyperbole.misc"                : true,

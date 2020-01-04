@@ -30,7 +30,6 @@ def check(text):
         "really",
         "quite",
         "in fact",
-        "so",
         "of course",
         "surely",
         "that said",
@@ -46,6 +45,12 @@ def check(text):
         {'POS': {"IN": ['VERB', "ADJ", "ADV"]}, "OP" : "+"}
     ]
     matcher.add('PRETTY', None, pattern)
+
+    pattern = [
+        {'LOWER' : 'so', "OP" : "+"}, # pretty pretty good
+        {'POS': {"IN": ['VERB', "ADJ", "ADV"]}, "OP" : "+"}
+    ]
+    matcher.add('SO', None, pattern)
 
     # pattern = [
     #     {'LOWER' : 'pretty', "OP" : "+"}, # pretty pretty badly
@@ -63,7 +68,7 @@ def check(text):
     for match_id, start, end in matches:
         errors.append((
             doc[start].idx,
-            doc[end].idx,
+            doc[end].idx + 2,
             err,
             msg,
             None))

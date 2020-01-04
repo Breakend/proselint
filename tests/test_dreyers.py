@@ -14,10 +14,13 @@ class TestCheck(Check):
         """Boilerplate."""
         return chk
 
-    def test_smoke(self):
-        """Basic smoke test for cursing.nword."""
+    def test_intensifiers(self):
+        """Wan intensifiers"""
         assert self.passes("""The flower is pretty.""")
         assert self.passes("""The world is not just.""")
         assert not self.passes("""Pretty pretty good.""")
         assert not self.passes("""That went pretty badly.""")
         assert not self.passes("""Would you just stop.""")
+        assert self.passes("""The so-called head of state.""")
+        assert not self.passes("""That's so cool.""")
+        assert self.passes("""The automation of administrative decisionmaking -- so-called cyberdelegation -- is already ongoing.""")
